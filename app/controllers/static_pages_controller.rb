@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def articles
+  	@articles = Article.all
   end
 
   def about

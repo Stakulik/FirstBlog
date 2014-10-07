@@ -1,3 +1,7 @@
-%h1 Привет, мир!
+%h1 Articles page - All articles
 
-%p Articles page
+%ol
+- @articles.each do |art|
+	%li
+		= art.title
+		= art.content
