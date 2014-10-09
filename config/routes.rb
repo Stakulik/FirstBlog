@@ -3,7 +3,8 @@ FirstBlog::Application.routes.draw do
   root 'static_pages#home'
   match '/articles', to: 'static_pages#articles', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
-  get "users/new"
+  match '/signup', to: 'users#new', via: 'get'
+  resources :users
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
