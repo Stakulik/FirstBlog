@@ -1,0 +1,8 @@
+%li
+  =article.title
+  %br
+  =article.content
+  =link_to "ID статьи: #{article.id}", article_path(article.id)
+  =link_to "Изменить", edit_article_path(article.id)
+  =link_to "Удалить", article_path(article.id), method: :delete, data: {confirm: 'Уверены?'}
+%br
