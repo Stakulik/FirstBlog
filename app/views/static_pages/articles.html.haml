@@ -1,12 +1,17 @@
 %h1 Articles page - All articles
 
-= link_to 'Создать статью', new_article_path
+=link_to 'Создать статью', new_article_path
 
 %ol
-  -@articles.each do |article|
-    %li
-      =article.title
-      =article.content
-      =link_to "ID статьи: #{article.id}", article_path(article.id)
-      =link_to "Изменить", edit_article_path(article.id)
-      =link_to "Удалить", article_path(article.id), method: :delete, data: {confirm: 'Уверены?'}
+   =render @articles
+   
+
+
+-#%ol
+-#  -@articles.each do |article|
+-#    %li
+-#      =article.title
+-#      =article.content
+-#      =link_to "ID статьи: #{article.id}", article_path(article.id)
+-#      =link_to "Изменить", edit_article_path(article.id)
+-#      =link_to "Удалить", article_path(article.id), method: :delete, data: {confirm: 'Уверены?'}
