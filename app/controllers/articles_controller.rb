@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  skip_before_action :verify_authenticity_token  # :only => [:index, :show]
+
 
   def show
     @article = Article.find(params[:id])
@@ -24,16 +26,15 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
-
+      redirect_to @article
     else
       render 'edit'
     end
   end
 
-  def destroy
+  def destroy  #переписать с забором id от юзера!!!
     Article.find(params[:id]).destroy
-    flash[:success] = "User deleted."
-    render 'articles'
+      redirect_to articles_path
   end
 
   private

@@ -2,4 +2,10 @@
 	Title:
 	= @article.title
 %p	Content:
-= @article.content
+=@article.content
+ID статьи:
+=@article.id
+
+
+=link_to "Изменить", edit_article_path
+=link_to "Удалить", article_path, method: :delete, data: {confirm: 'Уверены?'}
