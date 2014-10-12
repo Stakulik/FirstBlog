@@ -1,9 +1,11 @@
-%h1 Show page
-
+%h1 Юзеры
 %p
-  Имя:
+  Юзер:
   =@user.name
-
-%p
-  Почта:
+  %br
+  Мыло:
   =@user.email
+
+
+=link_to "Изменить", edit_user_path
+=link_to "Удалить", user_path, method: :delete, data: {confirm: 'Уверены?'}

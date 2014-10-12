@@ -1,8 +1,4 @@
 %h1 Index page - all users
 
 %ol
-  -@users.each do |us|
-    %li
-      =us.name
-      \-
-      =us.email
+  =render @users
