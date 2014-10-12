@@ -1,0 +1,10 @@
+%li
+  =user.name
+  %br
+  =user.email
+  %br
+  =link_to "Посмотреть профиль", user_path(user.id)
+  =link_to "Изменить", edit_user_path(user.id)
+  =link_to "Удалить", user, method: :delete, data: {confirm: 'Уверены?'}
+  %br
+  %br
