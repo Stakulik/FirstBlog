@@ -1,0 +1,10 @@
+%h1 Sign In
+
+=form_for(:session, url: sessions_path) do |f|
+  =f.text_field :email
+  %br
+  %br
+  =f.password_field :password
+  %br
+  %br
+  =f.submit "Войти"
