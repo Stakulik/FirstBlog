@@ -1,11 +1,18 @@
 %h1
-	Title:
-	=@article.title
-%p	Content:
+  Title:
+  =@article.title
+%p  Content:
 =@article.content
 ID статьи:
 =@article.id
+%br
 
+-if (true == @article.status)
+  %p Материал опубликован
+-else
+  %p Материал в черновиках
+
+%br
 
 =link_to "Изменить", edit_article_path
 =link_to "Удалить", article_path, method: :delete, data: {confirm: 'Уверены?'}

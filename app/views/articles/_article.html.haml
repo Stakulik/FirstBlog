@@ -5,5 +5,12 @@
   =link_to "ID статьи: #{article.id}", article_path(article.id)
   =link_to "Изменить", edit_article_path(article.id)
   =link_to "Удалить", article, method: :delete, data: {confirm: 'Уверены?'}
-  %br
-  %br
+  =article.status
+
+-if (true == article.status)
+  %p Материал опубликован
+-else
+  %p Материал в черновиках
+
+%br
+%br

@@ -32,15 +32,16 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def destroy  #переписать с забором id от юзера!!!
+  def destroy 
     Article.find(params[:id]).destroy
       redirect_to articles_path
   end
 
+
   private
 
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :status)
     end
 
 
