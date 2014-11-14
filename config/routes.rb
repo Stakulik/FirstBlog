@@ -1,5 +1,6 @@
 FirstBlog::Application.routes.draw do
 
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'

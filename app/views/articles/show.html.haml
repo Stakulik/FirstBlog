@@ -1,18 +1,23 @@
-%h1
-  Title:
-  =@article.title
-%p  Content:
-=@article.content
-ID статьи:
-=@article.id
-%br
+.row
+  .col-md-8
 
--if (true == @article.status)
-  %p Материал опубликован
--else
-  %p Материал в черновиках
+  %h1
+    Title:
+    =@article.title
+  %p  Content:
+  =@article.content
+  ID статьи:
+  =@article.id
+  %br
 
-%br
+  -if (true == @article.status)
+    %p Материал опубликован
+  -else
+    %p Материал в черновиках
 
-=link_to "Изменить", edit_article_path
-=link_to "Удалить", article_path, method: :delete, data: {confirm: 'Уверены?'}
+  %br
+
+  =link_to "Изменить", edit_article_path
+  =link_to "Удалить", article_path, method: :delete, data: {confirm: 'Уверены?'}
+
+  .col-md-4

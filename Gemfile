@@ -35,6 +35,9 @@ end
 gem "haml-rails"
 gem 'bcrypt-ruby'
 gem 'bcrypt'
+gem 'bootsy'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
