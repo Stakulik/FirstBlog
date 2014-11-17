@@ -1,7 +1,8 @@
 %li
   =article.title
   %br
-  =article.content
+  =raw article.content.first(80)
+  -#=raw truncate(article.content, length: 20) { link_to "Читать далее", article_path(article.id) }
   =link_to "ID статьи: #{article.id}", article_path(article.id)
   =link_to "Изменить", edit_article_path(article.id)
   =link_to "Удалить", article, method: :delete, data: {confirm: 'Уверены?'}
