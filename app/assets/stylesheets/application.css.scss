@@ -16,3 +16,49 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+}
+
+.header {
+  height: 3em;
+  width: 100%;
+}
+
+.row {
+  padding: 70px 10px 0 10px;
+  max-width: 1000px;
+  margin: auto;
+
+}
+
+.navbar-default .navbar-collapse {
+  max-width: 980px;
+  min-width: 400px;
+  width: 100%;
+  margin: auto;
+
+}
+
+.content {
+  padding-bottom: 100px;
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+} 
