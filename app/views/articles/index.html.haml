@@ -1,10 +1,17 @@
 %h1 Articles page - All articles
 
-=link_to 'Создать статью', new_article_path
+= link_to 'Создать статью', new_article_path
+
+
 
 %ol
-   =render @articles
+  =render @articles
    
+
+
+
+.page_info
+  = will_paginate @articles, container: true, previous_label: "К новым постам", next_label: "К старым постам"
 
 
 -#%ol

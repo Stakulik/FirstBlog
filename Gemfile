@@ -38,6 +38,8 @@ gem 'bcrypt'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sprockets-rails'
 gem 'bootsy'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 
 # Use ActiveModel has_secure_password
