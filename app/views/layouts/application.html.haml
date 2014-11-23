@@ -19,24 +19,18 @@
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav
           %li
-            = link_to 'Home', root_path
+            = link_to 'Главная', root_path
             %span.sr-only (current)
-          %li= link_to 'Articles', articles_path
+          %li= link_to 'Статьи', articles_path
           %li= link_to 'About', about_path
-          %li= link_to 'Users', users_path
-          %li= link_to 'Articles', articles_path
-          %li= link_to 'About', about_path
-          %li= link_to 'Users', users_path
-
-
-
-  -if signed_in?
-    =link_to 'Новая статья', new_article_path
-    =link_to "Sign out", signout_path, method: "delete"
-    %p Залогинен!
-  -else
-    =link_to 'SignUp', new_user_path
-    =link_to 'SignIn', new_session_path
+          -if signed_in?
+            %li= link_to 'Новая статья', new_article_path
+            -if current_user.admin?
+              %li= link_to 'Юзеры', users_path
+              %li= link_to 'Добавить юзера', new_user_path
+            %li= link_to "Выйти", signout_path, method: "delete"
+          -else
+            %li= link_to 'Войти', new_session_path
 
 .row
   .content.container.col-md-8.alert.alert-info

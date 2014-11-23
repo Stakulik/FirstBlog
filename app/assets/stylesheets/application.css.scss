@@ -26,6 +26,7 @@ html, body {
 }
 
 body {
+  padding-top: 70px;
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -38,7 +39,7 @@ body {
 }
 
 .row {
-  padding: 70px 10px 0 10px;
+  padding: 0 10px;
   max-width: 1000px;
   margin: auto;
 
