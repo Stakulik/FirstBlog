@@ -1,17 +1,26 @@
-%li
-  =article.title
-  %br
-  =raw article.content.first(80)
-  -#=raw truncate(article.content, length: 20) { link_to "Читать далее", article_path(article.id) }
-  =link_to "ID статьи: #{article.id}", article_path(article.id)
-  =link_to "Изменить", edit_article_path(article.id)
-  =link_to "Удалить", article, method: :delete, data: {confirm: 'Уверены?'}
-  =article.status
+-if signed_in?
+  %li
+    %p
+      = raw truncate(article.title, length: 30)
+      -#= article.title.first(30)
+      ID статьи:
+      = article.id
+    -#=raw article.content.first(80)
+    -#=raw truncate(article.content, length: 20) { link_to "Читать далее", article_path(article.id) }
+    -if (true == article.status)
+      Опубликовать
+    -else
+      В черновики
 
--if (true == article.status)
-  %p Материал опубликован
+    = link_to "Изменить", edit_article_path(article.id)
+    -if current_user.admin?
+      = link_to "Удалить", article, method: :delete, data: {confirm: 'Уверены?'}
 -else
-  %p Материал в черновиках
+  %li
+    = link_to "#{article.title}", article_path(article.id)
+    %br
+    = raw article.content.first(80)
+
 
 %br
 %br

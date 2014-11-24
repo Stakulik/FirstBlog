@@ -1,6 +1,3 @@
 module UsersHelper
 
-
-
-
 end

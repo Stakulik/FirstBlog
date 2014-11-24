@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  before_action :check
+
 
   def index
     @users=User.all
@@ -48,5 +51,14 @@ class UsersController < ApplicationController
   	def user_params
   		params.require(:user).permit(:name, :email, :password, :password_confirmation)  		
   	end
+
+    def check
+      
+
+
+
+      redirect_to about_path, notice: "Please sign in." unless (signed_in? && current_user.admin == true)
+
+    end
 
 end

@@ -4,8 +4,7 @@ FirstBlog::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
-  root 'static_pages#home'
-  match '/articles', to: 'articles#index', via: 'get'
+  root 'articles#index'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

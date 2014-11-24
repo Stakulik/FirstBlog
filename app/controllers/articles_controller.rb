@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
 #   @articles = Article.all
@@ -42,10 +43,16 @@ class ArticlesController < ApplicationController
   end
 
 
+
+
   private
 
     def article_params
       params.require(:article).permit(:title, :content, :status, :bootsy_image_gallery_id)
+    end
+
+    def signed_in_user
+      redirect_to about_path, notice: "Please sign in." unless signed_in?
     end
 
 
