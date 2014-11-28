@@ -1,17 +1,17 @@
-=form_for @user do |f|
-  =f.text_field :name
-  <- Login
+= form_for @user do |f|
+  = render partial: 'layouts/error_messages', locals: {zone: @user}
+  = f.text_field :name, placeholder: "Login"
+  (min. 5)
   %br
-  =f.text_field :email
-  <- Email
+  = f.text_field :email, placeholder: "Email"
   %br
-  =f.password_field :password
-  <- Pass
+  = f.password_field :password, placeholder: "Password"
+  (min. 6)
   %br
-  =f.password_field :password_confirmation
-  <- Pass conf
+  = f.password_field :password_confirmation, placeholder: "Password again"
+  %br
   %br
   -if @user.new_record?
-    =f.submit "Зарегистрироваться"
+    = f.submit "Создать"
   -else
-    =f.submit "Обновить"
+    = f.submit "Обновить"

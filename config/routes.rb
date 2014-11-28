@@ -1,11 +1,18 @@
 FirstBlog::Application.routes.draw do
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  root 'articles#index'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :articles
-  root 'articles#index'
+ # resources :articles
+  resources :articles do
+    member do
+      put 'public'
+    end
+  end
+ # match '/articles/:id', to: 'articles#public', via: 'put'
   match '/about', to: 'static_pages#about', via: 'get'
+  match '/articles', to: 'articles#index', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

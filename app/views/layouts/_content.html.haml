@@ -1,0 +1,11 @@
+.row
+  .content{class: "container #{signed_in? ? "col-xs-12 col-sm-12 col-md-12" : "col-xs-10 col-sm-8 col-md-8"} alert alert-info"}
+
+    = yield
+
+    - flash.each do |key, value|
+      = value
+      
+  - if !signed_in?
+    .sidebar.container.col-xs-3.col-sm-3.col-md-3.col-md-offset-1.alert.alert-success
+      Сайдбарчег

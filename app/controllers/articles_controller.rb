@@ -2,8 +2,7 @@ class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-#   @articles = Article.all
-    @articles = Article.paginate(page: params[:page], per_page: 4)
+    @articles = Article.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -42,6 +41,17 @@ class ArticlesController < ApplicationController
       redirect_to articles_path
   end
 
+  def public 
+    @article = Article.find(params[:id])
+    @article.toggle(:status)
+  #  @article.update_attribute(:status, !@article.status)
+    if @article.save
+      #good
+    else
+      #bad
+    end
+    redirect_to articles_path
+  end
 
 
 

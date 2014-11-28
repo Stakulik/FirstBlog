@@ -1,0 +1,27 @@
+.header
+  %nav{class: "navbar #{signed_in? ? "navbar-inverse" : "navbar-default"} navbar-fixed-top", role: "navigation"}
+    .container
+      .navbar-header
+        %button{ type: "button", class: "navbar-toggle collapsed", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        %ul.nav.navbar-nav
+          -if signed_in?
+            %li
+              = link_to 'Список статей', articles_path
+              %span.sr-only (current)
+            %li= link_to 'Новая статья', new_article_path
+            -if current_user.admin?
+              %li= link_to 'Юзеры', users_path
+            %li= link_to "Выйти", signout_path, method: "delete"
+          -else
+            %li
+              = link_to 'Главная', root_path
+              %span.sr-only (current)
+            %li= link_to 'Что-то еще', "#"
+            %li= link_to 'Help', "#"
+            %li= link_to 'About', about_path
+            %li= link_to 'Войти', new_session_path

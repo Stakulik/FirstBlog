@@ -1,60 +1,14 @@
-<!DOCTYPE html>
+!!! 5
 
-<head>
-=csrf_meta_tags
-=stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-=javascript_include_tag "application", "data-turbolinks-track" => true
-</head>
-<body>
+%head
+ = csrf_meta_tags
+ = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+ = javascript_include_tag "application", "data-turbolinks-track" => true
 
-%header
-  %nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
-    .container
-      .navbar-header
-        %button{ type: "button", class: "navbar-toggle collapsed", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-      .collapse.navbar-collapse#bs-example-navbar-collapse-1
-        %ul.nav.navbar-nav
-          -if signed_in?
-            %li
-              = link_to 'Список статей', articles_path
-              %span.sr-only (current)
-            %li= link_to 'Новая статья', new_article_path
-            -if current_user.admin?
-              %li= link_to 'Юзеры', users_path
-            %li= link_to "Выйти", signout_path, method: "delete"
-          -else
-            %li
-              = link_to 'Главная', root_path
-              %span.sr-only (current)
-            %li= link_to 'Что-то еще', "#"
-            %li= link_to 'Help', "#"
-            %li= link_to 'About', about_path
-            %li= link_to 'Войти', new_session_path
+%body
 
+= render "layouts/header"
 
-.row
-  .content.container.col-md-8.alert.alert-info
+= render "layouts/content"
 
-    =yield
-
-    -flash.each do |key, value|
-      =value
-
-  .sidebar.container.col-md-3.alert.alert-success
-    ad;kgdas;g
-
-
-
-
-.footer.panel.panel-default
-  .panel-footer Panel footer
-
-
-
-
-</body>
-</html>
+= render "layouts/footer"

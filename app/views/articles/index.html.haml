@@ -1,20 +1,8 @@
-%h1 Articles page - All articles
+- if signed_in?
+  %h2 Все статьи
 
 %ol
   = render @articles
    
-
-
-
-.page_info
+.pagination
   = will_paginate @articles, container: true, previous_label: "К новым постам", next_label: "К старым постам"
-
-
--#%ol
--#  -@articles.each do |article|
--#    %li
--#      =article.title
--#      =article.content
--#      =link_to "ID статьи: #{article.id}", article_path(article.id)
--#      =link_to "Изменить", edit_article_path(article.id)
--#      =link_to "Удалить", article_path(article.id), method: :delete, data: {confirm: 'Уверены?'}
