@@ -15,13 +15,13 @@
               %span.sr-only (current)
             %li= link_to 'Новая статья', new_article_path
             -if current_user.admin?
-              %li= link_to 'Юзеры', users_path
+              %li= link_to 'Пользователи', users_path
             %li= link_to "Выйти", signout_path, method: "delete"
           -else
             %li
               = link_to 'Главная', root_path
               %span.sr-only (current)
-            %li= link_to 'Что-то еще', "#"
-            %li= link_to 'Help', "#"
-            %li= link_to 'About', about_path
+            %li= link_to 'Some page 1', "#"
+            %li= link_to 'Some page 2', "#"
+            %li= link_to 'О блоге', about_path
             %li= link_to 'Войти', new_session_path
