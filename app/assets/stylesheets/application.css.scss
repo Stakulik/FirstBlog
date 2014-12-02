@@ -69,7 +69,30 @@ body {
   margin: 10px 0 0 0;
 }
 
+.art {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 5px;
+}
+
+.art.title.admin {
+  width: 400px;
+  float: left;
+}
+
 .art-id {
   left: 300px;
   position: absolute;
+}
+
+.art-btns {
+  left: 400px;
+}
+
+
+.art-btns .btn-warning,.btn-success,.btn-danger,.btn-info {
+  float: left;
+  margin-left: 20px;
+  width: 118px;
+
 }

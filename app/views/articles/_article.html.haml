@@ -1,14 +1,16 @@
 - if signed_in?
   %li
-    %p
-      = raw truncate(article.title, length: 30)
-      %span.art-id
-        ID статьи: 
-        = article.id   
-    = button_to "#{ true == article.status ? "Опубликовать" : "В черновики" }", public_article_path(article.id), :method => :put
-    = button_to "Изменить", edit_article_path(article.id), :method => :get
-    - if current_user.admin?
-      = button_to "Удалить", article, method: :delete, data: {confirm: 'Уверены?'}
+    .art
+      %p.art.title.admin
+        = raw truncate(article.title, length: 30)
+        %span.art-id
+          ID статьи: 
+          = article.id
+      .art-btns
+        = button_to "#{ true == article.status ? "Опубликовать" : "В черновики" }", public_article_path(article.id), method: "put", class: "#{ true == article.status ? "btn btn-success" : "btn btn-warning" }"
+        = button_to "Изменить", edit_article_path(article.id), method: "get", class: "btn btn-info"
+        - if current_user.admin?
+          = button_to "Удалить", article, method: "delete", data: {confirm: 'Уверены?'}, class: "btn btn-danger"
 - else
   %li
     = link_to "#{article.title}", article_path(article.id)
