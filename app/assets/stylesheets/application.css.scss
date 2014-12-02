@@ -33,16 +33,11 @@ body {
   position: relative;
 }
 
+/* Header*/
+
 .header {
-  height: 3em;
+/*  height: 3em; - если футер не поднимется */
   width: 100%;
-}
-
-.row {
-  padding: 0 10px;
-  max-width: 1000px;
-  margin: auto;
-
 }
 
 .navbar-default .navbar-collapse {
@@ -50,12 +45,99 @@ body {
   min-width: 400px;
   width: 100%;
   margin: auto;
-
 }
+
+/* Content - row */
 
 .row {
-  padding-bottom: 100px;
+  padding: 0 10px 100px 10px;
+  max-width: 1000px;
+  margin: auto;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.art-preview {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.title-art-prev {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.content-art-prev {
+  margin-top: -10px;
+}
+
+.art-btns-signed {
+
+}
+
+.art-title-signed {
+  min-width: 240px;
+  float: left;
+  height: 20px;
+}
+
+.art-id-signed {
+  margin: 0;
+  width: 135px;
+}
+
+.art-btns-signed .btn-warning,.btn-success,.btn-danger,.btn-info {
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 118px;
+
+}
+
+.field-edit-title {
+  width: 670px;
+  margin: 0 0 10px 0;
+}
+
+.field-edit-content {
+  width: 670px;
+  height: 550px;
+  margin: 10px 0 0 0;
+}
+
+.art-list-signed > .row {
+  padding-bottom: 0;
+}
+
+
+.art-title {
+  font-size: 24px;
+  margin: 0 0 25px 0;
+}
+
+.art-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.h1-signed {
+  font-size: 30px;
+  margin: 0 0 25px 0;
+}
+
+.pagination {
+  margin: 10px 0 0 0;
+}
+
 
 .panel-footer {
   height: 70px;
@@ -63,36 +145,3 @@ body {
   position: absolute;
   bottom: 0;
 } 
-
-
-.pagination {
-  margin: 10px 0 0 0;
-}
-
-.art {
-  width: 100%;
-  margin-bottom: 30px;
-  height: 5px;
-}
-
-.art.title.admin {
-  width: 400px;
-  float: left;
-}
-
-.art-id {
-  left: 300px;
-  position: absolute;
-}
-
-.art-btns {
-  left: 400px;
-}
-
-
-.art-btns .btn-warning,.btn-success,.btn-danger,.btn-info {
-  float: left;
-  margin-left: 20px;
-  width: 118px;
-
-}

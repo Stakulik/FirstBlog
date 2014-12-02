@@ -1,8 +1,9 @@
 - if signed_in?
-  %h2 Все статьи
+  %h1.h1-signed  Все статьи
 
-%ol
-  = render @articles
-   
+%ul.art-list
+  = render partial: "article", collection: @articles
+
+
 .pagination
   = will_paginate @articles, container: true, previous_label: "К новым постам", next_label: "К старым постам"

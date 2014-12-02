@@ -1,8 +1,9 @@
 = form_for @article do |f|
   = render partial: 'layouts/error_messages', locals: {zone: @article}
-  = f.text_field :title, size: "61", placeholder: "Min 10 symb."
+  = f.text_field :title, placeholder: "Min 10 symb.", class: "field-edit-title"
   %br
-  = f.bootsy_area :content, size: "60x12", placeholder: "Min 10 symb."
+  = f.bootsy_area :content, placeholder: "Min 10 symb.", class: "field-edit-content"
+  %br
   %br
   = f.select :status, options_for_select([["Опубликовать", "true"], ["Черновик", "false"]])
   %br
