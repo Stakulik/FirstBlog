@@ -33,7 +33,7 @@ body {
   position: relative;
 }
 
-/* Header*/
+/* Header */
 
 .header {
 /*  height: 3em; - если футер не поднимется */
@@ -56,18 +56,10 @@ body {
 
 }
 
+/* Public pages styles */
 
 
-
-
-
-
-
-
-
-
-
-.art-preview {
+.art-prev{
   width: 100%;
   margin-bottom: 15px;
 }
@@ -81,9 +73,23 @@ body {
   margin-top: -10px;
 }
 
-.art-btns-signed {
-
+.art-title {
+  font-size: 24px;
+  margin: 0 0 25px 0;
 }
+
+.art-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pagination {
+  margin: 10px 0 0 0;
+}
+
+
+
+/* CMS pages styles */
 
 .art-title-signed {
   min-width: 240px;
@@ -100,7 +106,6 @@ body {
   float: left;
   margin: 0 5px 5px 0;
   width: 118px;
-
 }
 
 .field-edit-title {
@@ -118,25 +123,14 @@ body {
   padding-bottom: 0;
 }
 
-
-.art-title {
-  font-size: 24px;
-  margin: 0 0 25px 0;
-}
-
-.art-list {
-  list-style: none;
-  padding-left: 0;
-}
-
 .h1-signed {
   font-size: 30px;
   margin: 0 0 25px 0;
 }
 
-.pagination {
-  margin: 10px 0 0 0;
-}
+
+
+/* Footer */
 
 
 .panel-footer {
@@ -145,3 +139,5 @@ body {
   position: absolute;
   bottom: 0;
 } 
+
+
