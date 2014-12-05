@@ -9,5 +9,4 @@
   - if !signed_in?
     .sidebar.container.col-xs-3.col-sm-3.col-md-3.col-md-offset-1.alert.alert-success
       5 самых популярных записей:
-      = @art5
       -#= @articles.find_by_id("#{rand(@articles.id.last)}")
