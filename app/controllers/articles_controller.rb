@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 10)
+    if signed_in?
+      @articles = Article.paginate(page: params[:page], per_page: 10)
+    else
+      @articles = Article.where(status: true).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def show
