@@ -9,4 +9,7 @@
   - if !signed_in?
     .sidebar.container.col-xs-3.col-sm-3.col-md-3.col-md-offset-1.alert.alert-success
       5 самых популярных записей:
-      -#= @articles.find_by_id("#{rand(@articles.id.last)}")
+      %br
+      - @top5.all.sample(5).each do |art|
+        = link_to "#{truncate(art.title, length: 20)}", art
+        %br
