@@ -5,14 +5,12 @@ class ArticlesController < ApplicationController
     if signed_in?
       @articles = Article.paginate(page: params[:page], per_page: 10)
     else
-      @articles = Article.where(status: true).paginate(page: params[:page], per_page: 10)
-      @top5 = Article.where(status: true)
+      @articles = Article.where(status: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     end
   end
 
   def show
     @article = Article.find(params[:id])
-    @top5 = Article.where(status: true)
   end
 
   def new

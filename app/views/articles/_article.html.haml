@@ -7,7 +7,7 @@
         ID статьи: 
         = article.id
       .art-btns-signed.col-xs-12.col-sm-7.col-md-6
-        = button_to "#{ true == article.status ? "Опубликовать" : "В черновики" }", public_article_path(article.id), method: "put", class: "#{ true == article.status ? "btn btn-success" : "btn btn-warning" }"
+        = button_to "#{ article.status == true ? "В черновики" : "Опубликовать" }", public_article_path(article.id), method: "put", class: "#{ true == article.status ? "btn btn-warning" : "btn btn-success" }"
         = button_to "Изменить", edit_article_path(article.id), method: "get", class: "btn btn-info"
         - if current_user.admin?
           = button_to "Удалить", article, method: "delete", data: {confirm: 'Уверены?'}, class: "btn btn-danger"
