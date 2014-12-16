@@ -102,21 +102,36 @@ body {
   width: 135px;
 }
 
-.art-btns-signed .btn-warning,.btn-success,.btn-danger,.btn-info {
+.btn-warning, .btn-success, .btn-danger, .btn-info {
   float: left;
   margin: 0 5px 5px 0;
   width: 118px;
 }
 
-.field-edit-title {
-  width: 670px;
+.field-edit-title{
+  width: 638px;
+  margin: 0 0 10px 0;
+}
+
+.field-edit-header{
+  width: 616px;
+  margin: 0 0 10px 0;
+}
+
+.field-edit-seo-desc{
+  width: 564px;
+  margin: 0 0 10px 0;
+}
+
+.field-edit-seo-keys{
+  width: 574px;
   margin: 0 0 10px 0;
 }
 
 .field-edit-content {
   width: 670px;
   height: 550px;
-  margin: 10px 0 0 0;
+  margin: 10px 0;
 }
 
 .art-list-signed > .row {
@@ -182,4 +197,22 @@ body {
   text-decoration: none;
   display: inline-block;
   color: #000000;
+}
+
+
+
+
+/* Edit content */
+
+
+
+.art-edit-sidebar{
+ position: absolute;
+ top: 70px;
+ right: 40px;
+}
+
+.art-btns-signed{
+  float: right;
+
 }

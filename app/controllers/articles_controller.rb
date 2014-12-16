@@ -2,9 +2,10 @@ class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :top5, only: [:index, :show]
 
+
   def index
     if signed_in?
-      @articles = Article.paginate(page: params[:page], per_page: 10)
+      @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     else
       @articles = Article.where(status: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     end
@@ -63,7 +64,7 @@ class ArticlesController < ApplicationController
   private
 
     def article_params
-      params.require(:article).permit(:title, :content, :status, :bootsy_image_gallery_id)
+      params.require(:article).permit(:header, :content, :title, :seo_description, :seo_keywords, :status, :bootsy_image_gallery_id, :created_at)
     end
 
     def signed_in_user
@@ -73,5 +74,8 @@ class ArticlesController < ApplicationController
     def top5
       @top5 = Article.where(status: true)
     end
+
+
+
 
 end

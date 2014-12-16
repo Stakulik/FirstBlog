@@ -2,7 +2,7 @@
   %li.art-list-signed
     .row
       .art-title-signed.col-xs-2.col-sm-2.col-md-2.col-lg-2
-        = raw truncate(article.title, length: 30)
+        = raw truncate(article.header, length: 30)
       .art-id-signed.col-xs-4.col-sm-6.col-md-2.col-lg-2
         ID статьи: 
         = article.id
@@ -16,7 +16,7 @@
   - if article.status == true 
     %li
       .art-prev
-        %h1.title-art-prev= link_to "#{article.title}", article_path(article.id)
+        %h1.title-art-prev= link_to "#{article.header}", article_path(article.id)
         %p.content-art-prev= raw article.content.first(180)
         -#= article.created_at.strftime("%H:%M %D")
       - if article.created_at.strftime("%D") != Time.now.strftime("%D")
