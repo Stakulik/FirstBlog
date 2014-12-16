@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :top5, only: [:index, :show]
 
   def index
     if signed_in?
@@ -69,5 +70,8 @@ class ArticlesController < ApplicationController
       redirect_to about_path, notice: "Please sign in." unless signed_in?
     end
 
+    def top5
+      @top5 = Article.where(status: true)
+    end
 
 end
