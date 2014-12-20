@@ -1,5 +1,5 @@
 .row
-  .content{class: "container #{signed_in? ? "col-xs-12 col-sm-12 col-md-12" : "col-xs-10 col-sm-8 col-md-8"} alert alert-info"}
+  .content{class: "container #{signed_in? ? "col-xs-12 col-sm-12 col-md-12" : "col-xs-12 col-sm-8 col-md-8"} alert alert-info"}
 
     = yield
 
@@ -7,8 +7,8 @@
       = value
       
   - if !signed_in?
-    .sidebar.container.col-xs-3.col-sm-3.col-sm-offset-1.col-md-3.col-md-offset-1.alert.alert-success
-      %h4 5 самых популярных записей:
+    .sidebar.container.col-xs-12.col-sm-3.col-sm-offset-1.col-md-3.col-md-offset-1.alert.alert-success
+      %h4 Самое популярное:
 
       - @top5.all.sample(5).each do |art|
         = link_to "#{truncate(art.title, length: 45)}", art

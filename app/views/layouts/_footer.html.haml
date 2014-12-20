@@ -1,6 +1,7 @@
 .footer
   .panel-footer
-    - require 'uri'
-    = request.host 
-    &copy
-    = Time.now.strftime("%Y")
+    .copyrights
+      - require 'uri'
+      = request.host 
+      &copy
+      = Time.now.strftime("%Y")

@@ -26,10 +26,10 @@ html, body {
 }
 
 body {
+  margin: auto;
   padding-top: 70px;
   min-height: 100%;
   height: auto !important;
-  height: 100%;
   position: relative;
 }
 
@@ -37,11 +37,10 @@ body {
 
 .header {
 /*  height: 3em; - если футер не поднимется */
-  width: 100%;
 }
 
 .collapse {
-  width: 980px;
+  width: 1000px;
   margin: auto;
 }   
 
@@ -203,4 +202,13 @@ body {
 
 .time-prev{
   font-size: 12px;
+}
+
+
+
+.copyrights {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 10px;
+
 }
