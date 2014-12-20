@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :top5, only: [:index, :show]
+  before_action :top_5, only: [:index, :show]
 
 
   def index
@@ -8,11 +8,13 @@ class ArticlesController < ApplicationController
       @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     else
       @articles = Article.where(status: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+      @show_sidebar = true
     end
   end
 
   def show
     @article = Article.find(params[:id])
+    @show_sidebar = true
   end
 
   def new
@@ -71,8 +73,8 @@ class ArticlesController < ApplicationController
       redirect_to about_path, notice: "Please sign in." unless signed_in?
     end
 
-    def top5
-      @top5 = Article.where(status: true)
+    def top_5
+      @top_5 = Article.where(status: true)
     end
 
 
