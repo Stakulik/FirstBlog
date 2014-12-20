@@ -1,14 +1,15 @@
-
 - if signed_in?
   %li.art-list-signed
     .row
-      .art-title-signed.col-xs-2.col-sm-2.col-md-2.col-lg-2
-        = raw truncate(article.header, length: 30)
-      .art-id-signed.col-xs-4.col-sm-6.col-md-2.col-lg-2
+      .art-title-signed.col-xs-12.col-sm-3.col-md-4.col-lg-4
+        = raw truncate(article.header, length: 35)
+      .art-id-signed.col-xs-12.col-sm-3.col-md-3.col-lg-3
         ID статьи: 
         = article.id
+        %br
+        Дата создания:
         = article.created_at.strftime("%D")
-      .art-btns-signed.col-xs-12.col-sm-12.col-md-6.col-lg-6
+      .art-btns-signed.col-xs-12.col-sm-6.col-md-5.col-lg-5
         = button_to "#{ article.status == true ? "В черновики" : "Опубликовать" }", public_article_path(article.id), method: "put", class: "#{ true == article.status ? "btn btn-warning" : "btn btn-success" }"
         = button_to "Изменить", edit_article_path(article.id), method: "get", class: "btn btn-info"
         - if current_user.admin?
