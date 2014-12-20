@@ -40,12 +40,10 @@ body {
   width: 100%;
 }
 
-.navbar-default .navbar-collapse {
-  max-width: 980px;
-  min-width: 400px;
-  width: 100%;
+.collapse {
+  width: 980px;
   margin: auto;
-}
+}   
 
 /* Content - row */
 
@@ -70,7 +68,7 @@ body {
 }
 
 .content-art-prev {
-  margin-top: -10px;
+  margin: -10px 0 0 0;
 }
 
 .art-title {
@@ -108,29 +106,12 @@ body {
   width: 118px;
 }
 
-.field-edit-title{
-  width: 638px;
-  margin: 0 0 10px 0;
-}
-
-.field-edit-header{
-  width: 616px;
-  margin: 0 0 10px 0;
-}
-
-.field-edit-seo-desc{
-  width: 564px;
-  margin: 0 0 10px 0;
-}
-
-.field-edit-seo-keys{
-  width: 574px;
+.field-edit-header, .field-edit-title, .field-edit-seo-desc, .field-edit-seo-keys{
+  width: 670px;
   margin: 0 0 10px 0;
 }
 
 .field-edit-content {
-  width: 670px;
-  height: 550px;
   margin: 10px 0;
 }
 
@@ -207,12 +188,19 @@ body {
 
 
 .art-edit-sidebar{
- position: absolute;
- top: 70px;
- right: 40px;
+  width: 240px;
+  text-align: right;
+  position: absolute;
+  top: 93px;
+  left: 720px;
+  padding: 10px;
+  border: 1px solid;
 }
 
 .art-btns-signed{
   float: right;
+}
 
+.time-prev{
+  font-size: 12px;
 }

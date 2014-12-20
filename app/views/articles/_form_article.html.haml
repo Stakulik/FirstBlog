@@ -1,36 +1,45 @@
 = form_for @article do |f|
   = render partial: 'layouts/error_messages', locals: {zone: @article}
   Header:
+  %br
   = f.text_field :header, placeholder: "Min 10 symb.", class: "field-edit-header"
   %br
-  = f.bootsy_area :content, placeholder: "Min 10 symb.", class: "field-edit-content"
+  = f.bootsy_area :content, cols: 81, rows: 25, placeholder: "Min 10 symb.", class: "field-edit-content"
   %br
   Title:
+  %br
   = f.text_field :title, class: "field-edit-title"
   %br
   SEO description:
+  %br
   = f.text_field :seo_description, class: "field-edit-seo-desc"
   %br
   SEO keywords:
+  %br
   = f.text_field :seo_keywords, class: "field-edit-seo-keys"
   %br
 
   .art-edit-sidebar
+    - if !@article.new_record?
+      Статья доступна по 
+      = link_to "этой ссылке", article_path, target: "_blank"
+      %br
+      %br
+      Время создания:
+      =@article.created_at.strftime("%H:%M %d/%m/%y")
+      %br
+      %br
     Статус:
     = f.select :status, options_for_select([["Опубликовать", "true"], ["Черновик", "false"]])
     %br
     %br
-    Время создания:
-    %br
-    = f.text_field :created_at
-    %br
-    %br
-    Дата создания:
-    %br
-
-    %br
-    %br
-    %br
+    /
+      Время создания:
+      %br
+      = f.text_field :created_at
+      %br
+      Дата создания:
+      %br
     Действие: 
     - if @article.new_record?
       = f.submit "Создать"

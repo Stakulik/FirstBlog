@@ -1,5 +1,6 @@
 .footer
   .panel-footer
-    Panel footer
-    %br
-    = root_url
+    - require 'uri'
+    = request.host 
+    &copy
+    = Time.now.strftime("%Y")
