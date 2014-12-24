@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
     else
       #bad
     end
-    redirect_to articles_path
+    redirect_to :back
   end
 
 
