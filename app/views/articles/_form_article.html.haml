@@ -2,9 +2,9 @@
   = render partial: 'layouts/error_messages', locals: {zone: @article}
   Header:
   %br
-  = f.text_field :header, placeholder: "Min 10 symb.", class: "field-edit-header"
+  = f.text_field :header, class: "field-edit-header"
   %br
-  = f.bootsy_area :content, cols: 81, rows: 25, placeholder: "Min 10 symb.", class: "field-edit-content"
+  = f.bootsy_area :content, cols: 81, rows: 25, class: "field-edit-content"
   %br
   Title:
   %br
