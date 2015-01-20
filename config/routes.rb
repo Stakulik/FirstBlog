@@ -4,16 +4,16 @@ FirstBlog::Application.routes.draw do
   root 'articles#index'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :articles do
+  resources :articles, except: :index do
     member do
       put 'public'
     end
   end
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/articles', to: 'articles#index', via: 'get'
-  match '/signup', to: 'users#new', via: 'get'
-  match '/admin', to: 'sessions#new', via: 'get', as: :signin
-  match '/signout', to: 'sessions#destroy', via: 'delete'
+  get '/about', to: 'static_pages#about'
+  get '/articles', to: redirect('/')
+  get '/signup', to: 'users#new'
+  get '/admin', to: 'sessions#new', as: :signin
+  delete '/signout', to: 'sessions#destroy'
 
 
 
