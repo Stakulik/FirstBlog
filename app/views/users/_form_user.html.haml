@@ -1,17 +1,15 @@
 = form_for @user do |f|
   = render partial: 'layouts/error_messages', locals: {zone: @user}
-  = f.text_field :name, placeholder: "Login"
-  (min. 5)
-  %br
-  = f.text_field :email, placeholder: "Email"
-  %br
-  = f.password_field :password, placeholder: "Password"
-  (min. 6)
-  %br
-  = f.password_field :password_confirmation, placeholder: "Password again"
-  %br
-  %br
+  %p.form-label Login: (min. 5 symbols)
+  = f.text_field :name
+  %p.form-label Email:
+  = f.text_field :email
+  %p.form-label Password: (min. 6 symbols)
+  = f.password_field :password
+  %p.form-label Password again:
+  = f.password_field :password_confirmation
+  %br 
   -if @user.new_record?
-    = f.submit "Создать"
+    = f.submit "Создать", class: "form-button"
   -else
-    = f.submit "Обновить"
+    = f.submit "Обновить", class: "form-button"

@@ -1,6 +1,6 @@
 - if zone.errors.any?
   #error_explanation
-    .alert.alert-error
+    .alert.alert-danger
       The form contains 
       = pluralize(zone.errors.count, "error")
     %ul

@@ -1,21 +1,23 @@
 .row
   .content{class: "container #{@show_sidebar ? "col-xs-12 col-sm-8 col-md-8" : "col-xs-12 col-sm-12 col-md-12"}"}
 
-    = yield
-
     - flash.each do |key, value|
-      = value
+      .alert{class: "alert-#{key}"}
+        = value
+
+    = yield
       
   - if !signed_in? && @show_sidebar == true 
     .sidebar.container.col-xs-12.col-sm-3.col-sm-offset-1.col-md-3.col-md-offset-1
-      %h4.popular Самое популярное:
-      - c = 0
-      - @top_5.sample(5).each do |art|
-        = link_to "#{truncate(art.title, length: 45)}", art
-        - c += 1
-        - if c < 5
-          %hr
-        
+      .sidebar-content
+        %h4.popular Самое популярное:
+        - c = 0
+        - @top_5.sample(5).each do |art|
+          = link_to "#{truncate(art.title, length: 45)}", art
+          - c += 1
+          - if c < 5
+            %hr
+          
 
 
 
