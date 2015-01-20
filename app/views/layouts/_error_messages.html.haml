@@ -1,8 +1,9 @@
 - if zone.errors.any?
   #error_explanation
     .alert.alert-danger
-      The form contains 
-      = pluralize(zone.errors.count, "error")
+      В форме
+      = zone.errors.count
+      = Russian.p(zone.errors.count, "ошибка:", "ошибки:", "ошибок:")
     %ul
       - zone.errors.full_messages.each do |msg|
         %li 

@@ -40,7 +40,7 @@ gem 'sprockets-rails'
 gem 'bootsy'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-
+gem 'russian', '~> 0.6.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
