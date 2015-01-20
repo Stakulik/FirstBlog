@@ -1,12 +1,15 @@
-%h1 Юзеры
+- provide(:title, @user.name)
+%h1.h1-signed
+  Информация о 
+  = @user.name
 
 %p
-  Юзер:
-  =@user.name
+  User:
+  = @user.name
   %br
-  Мыло:
-  =@user.email
+  Email:
+  = @user.email
 
 
-=link_to "Изменить", edit_user_path
-=link_to "Удалить", user_path, method: :delete, data: {confirm: 'Уверены?'}
+= link_to "Изменить", edit_user_path
+= link_to "Удалить", user_path, method: :delete, data: {confirm: 'Уверены?'}

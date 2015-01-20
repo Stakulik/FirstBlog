@@ -9,7 +9,7 @@ class Article < ActiveRecord::Base
   private
  
   def get_title
-    self.title = header if header
+    self.title = header if title.empty?
   end
 
 end

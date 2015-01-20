@@ -13,7 +13,7 @@
         %h4.popular Самое популярное:
         - c = 0
         - @top_5.sample(5).each do |art|
-          = link_to "#{truncate(art.title, length: 45)}", art
+          = link_to "#{truncate(art.header, length: 45)}", art
           - c += 1
           - if c < 5
             %hr
