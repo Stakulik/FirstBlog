@@ -5,19 +5,19 @@ class UsersController < ApplicationController
 
 
   def index
-    @users=User.all
-    @users_amount=User.all.count + 1
+    @users = User.all
+    @users_amount = User.all.count + 1
   end
 
   def new
-  	@user=User.new
+  	@user = User.new
   end
 
   def create
-  	@user=User.new(user_params)
+  	@user = User.new(user_params)
   	if @user.save
       sign_in @user
-      flash[:success]="Добро пожаловать!"
+      flash[:success] = "Добро пожаловать!"
       redirect_to @user
   	else
   	  render 'new'
@@ -25,15 +25,15 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user=User.find(params[:id])
+  	@user = User.find(params[:id])
   end
 
   def edit
-    @user=User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @user=User.find(params[:id])
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user
     else

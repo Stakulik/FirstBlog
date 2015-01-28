@@ -5,11 +5,13 @@ class Article < ActiveRecord::Base
 #  validates :user_id, presence: true
   include Bootsy::Container
   before_save :get_title
+
  
   private
  
   def get_title
     self.title = header if title.empty?
   end
+
 
 end
