@@ -1,9 +1,10 @@
-- provide(:title, "#{signed_in? ? 'Все статьи': 'Главная' }")
+- provide(:title, "#{signed_in? ? 'Все статьи' : 'Главная' }")
 - if signed_in?
   %h1.h1-signed  Все статьи
 
 %ul.art-list
   = render @articles
+
 
 
 .pagination

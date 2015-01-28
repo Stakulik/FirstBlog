@@ -1,6 +1,9 @@
-%li
-  = user.name
-  %br
-  = link_to "Изменить", edit_user_path(user.id)
-  = "&nbsp;&nbsp;".html_safe
-  = link_to "Удалить", user, method: :delete, data: {confirm: 'Уверены?'}
+.each-user.row
+  .usr-number-signed.col-xs-1.col-sm-1.col-md-1.col-lg-1
+    = @users_amount -= 1
+  .usr-name-signed.col-xs-3.col-sm-3.col-md-3.col-lg-3
+    = user.name
+  .usr-btns-signed.col-xs-8.col-sm-8.col-md-8.col-lg-8
+    = button_to "Изменить", edit_user_path(user.id), method: "get", class: "btn btn-info"
+    = button_to "Удалить", user, method: :delete, data: {confirm: 'Уверены?'}, class: "btn btn-danger"
+

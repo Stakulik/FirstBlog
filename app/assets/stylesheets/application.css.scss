@@ -214,6 +214,7 @@ body {
   text-align: right;
   padding: 10px;
   border: 1px solid;
+  border-radius: 4px;
 }
 
 
@@ -271,4 +272,32 @@ body {
     list-style: none;
     margin: -10px 0 18px -30px;
   }
+}
+
+.each-user {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.usr-name-signed {
+
+
+}
+
+.usr-btns-signed {
+  margin-bottom: 5px;
+  padding: 0 5px;
+
+}
+
+.usr-number-signed {
+  width: 20px;
+  float: left;
+}
+
+
+.link-underline {
+  text-decoration: underline;
 }

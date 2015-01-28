@@ -10,7 +10,7 @@
       %ul.nav.navbar-nav
         -if signed_in?
           %li
-            = link_to 'Список статей', articles_path
+            = link_to 'Список статей', root_path
             %span.sr-only (current)
           %li= link_to 'Новая статья', new_article_path
           -if current_user.admin?

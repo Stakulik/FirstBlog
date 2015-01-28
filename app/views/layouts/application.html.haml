@@ -6,10 +6,8 @@
  = javascript_include_tag "application", "data-turbolinks-track" => true
  %title= yield(:title)
 
+
 %body
-
-= render "layouts/header"
-
-= render "layouts/content"
-
-= render "layouts/footer" if !signed_in?
+ = render "layouts/header"
+ = render "layouts/content"
+ = render "layouts/footer" if !signed_in?

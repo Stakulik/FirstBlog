@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   include SessionsHelper
   before_action :check
+  helper_method :count
 
 
   def index
     @users=User.all
+    @users_amount=User.all.count + 1
   end
 
   def new
