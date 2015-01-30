@@ -6,6 +6,10 @@
  = javascript_include_tag "application", "data-turbolinks-track" => true
  %title= yield(:title)
 
+- if !signed_in? && current_page?(root_path)
+ %h1.h1-main-page Что почитать о Rails
+ %p.header-explanation *демонстрационное наполнение
+
 
 %body
  = render "layouts/header"

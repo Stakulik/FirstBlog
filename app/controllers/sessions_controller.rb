@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     	sign_in user
     	redirect_to root_path
     else
-    	flash.now[:danger] = "Неправильные данные"
+    	flash.now[:danger] = "Неправильные логин / пароль"
     	render 'new'
     end
   end
