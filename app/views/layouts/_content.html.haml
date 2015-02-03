@@ -1,22 +1,12 @@
-.row
-  .content{class: "container #{@show_sidebar ? "col-xs-12 col-sm-8 col-md-8" : "col-xs-12 col-sm-12 col-md-12"}"}
+.content{class: "container #{@show_sidebar ? "col-xs-12 col-sm-8 col-md-8" : "col-xs-12 col-sm-12 col-md-12"}"}
 
-    - flash.each do |key, value|
-      .alert{class: "alert-#{key}"}
-        = value
+  - flash.each do |key, value|
+    .alert{class: "alert-#{key}"}
+      = value
 
-    = yield
+  = yield
       
-  - if !signed_in? && @show_sidebar == true 
-    .sidebar.container.col-xs-12.col-sm-3.col-sm-offset-1.col-md-3.col-md-offset-1
-      .sidebar-content
-        %h4.popular Самое популярное:
-        - c = 0
-        - @top_5.sample(5).each do |art|
-          = link_to "#{truncate(art.header, length: 45)}", art
-          - c += 1
-          - if c < 5
-            %hr
+
           
 
 
