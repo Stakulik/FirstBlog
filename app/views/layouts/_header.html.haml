@@ -5,7 +5,7 @@
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
-        %span.icon-bar
+        %span.icon-bar 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       %ul.nav.navbar-nav
         -if signed_in?
@@ -17,11 +17,10 @@
             %li= link_to 'Пользователи', users_path
           %li= link_to "Выйти", signout_path, method: "delete"
         -else
-          %li.li-with-logo
-            %img.rubin-logo{src: "/images/ruby_logo.png"}
+          %li
             = link_to 'Главная', root_path
             %span.sr-only (current)
-          %li= link_to 'GitHub', "https://github.com/Stakulik"
+          %li= link_to 'GitHub', "https://github.com/Stakulik", target: "_blank"
           %li= link_to 'О блоге', about_path
           %li= link_to 'Some page 1', "#"
           %li= link_to 'Some page 2', "#"
