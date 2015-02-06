@@ -55,18 +55,22 @@ body {
 
 .wrap {
   background-color: #fff;
-  padding: 20px 30px 50px 20px;
+  padding: 20px 35px 20px 20px;
   max-width: 1000px;
   margin: auto;
+  min-height: 800px;
 }
 
 
 
 
 .content {
- padding: 0 15px 20px;
-  margin-bottom: 20px;
+  padding: 0 15px 0;
+  min-width: 500px;
+}
 
+.content img {
+  max-width: 500px;
 }
 
 
@@ -79,7 +83,8 @@ body {
 }
 
 .header-art-prev {
-  margin-top: -15px;
+  line-height: 12px;
+  margin: 0 0 15px 0;
 }
 
 .header-art-prev a {
@@ -89,7 +94,7 @@ body {
 }
 
 .content-art-prev {
-  margin: -10px 0 0 0;
+  margin: -7px 0 0 0;
   font-size: 15px;
   color: #000; 
 }
@@ -279,8 +284,7 @@ body {
 }
 
 .sidebar-content hr {
-  color: #000;
-  border-style: groove;
+  border-color: #CFCFCF;
 }
 
 .sidebar-content a {
@@ -341,7 +345,22 @@ body {
 
 .h1-main-page {
   font-size: 38px;
-  margin: auto;
-  width: 366px;
+  margin: 0px;
 }
 
+
+
+.footer {
+  height: 100px;
+}
+
+.logo {
+  margin: auto;
+  width: 416px;
+}
+
+.ruby-logo {
+  width: 49px;
+  height: 37px;
+  float: left;
+}

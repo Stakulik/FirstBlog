@@ -10,12 +10,14 @@
  = render "layouts/header"
  
  - if !signed_in? && current_page?(root_path)
-  %h1.h1-main-page Что почитать о Rails
-  %p.header-explanation *демонстрационное наполнение
+  .logo
+   %img.ruby-logo{src:"/images/ruby_logo.png"}
+   %h1.h1-main-page Что почитать о Rails
+   %p.header-explanation *демонстрационное наполнение
 
  .wrap
   .row
    = render "layouts/content"
    = render "layouts/sidebar" if !signed_in? && @show_sidebar == true 
-
+   
  = render "layouts/footer" if !signed_in?
