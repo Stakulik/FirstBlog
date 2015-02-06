@@ -289,9 +289,14 @@ body {
   display : none !important;
 }
 
-.pagination a {
-  margin: 5px 0;
+.pagination {
+  margin: 0;
+  a {
+    margin: 5px 0;
+  }
 }
+
+.pagination 
 
 .pagination > li > a {
   float: none;
