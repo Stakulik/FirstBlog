@@ -8,7 +8,15 @@
   = f.password_field :password
   %p.form-label Password again:
   = f.password_field :password_confirmation
-  %br 
+  %br
+  - if @current_user.admin?
+    .user-role
+      - if @user.admin?
+        = f.check_box(:admin, {}, false, true)
+        Снять привелегии администратора
+      - else
+        = f.check_box(:admin, {}, true, false)
+        Назначить администратором
   -if @user.new_record?
     = f.submit "Создать", class: "form-button"
   -else
