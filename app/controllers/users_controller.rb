@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   	end
 
     def check
-        redirect_to about_path, notice: "Please sign in." unless (signed_in? && current_user.admin == true)
+        redirect_to went_wrong_path, notice: "Please sign in." unless (signed_in? && current_user.admin == true)
     end
 
 end

@@ -14,6 +14,7 @@ FirstBlog::Application.routes.draw do
   get '/signup', to: 'users#new'
   get '/admin', to: 'sessions#new', as: :signin
   delete '/signout', to: 'sessions#destroy'
+  get '/went-wrong', to: 'static_pages#went_wrong'
 
 
 
