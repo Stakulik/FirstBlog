@@ -51,11 +51,11 @@ class UsersController < ApplicationController
   private
 
   	def user_params
-  		params.require(:user).permit(:name, :email, :password, :password_confirmation)  		
+  		params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)  		
   	end
 
     def check
-        redirect_to about_path, notice: "Please sign in." unless (signed_in? && current_user.admin == true)
+        redirect_to went_wrong_path, notice: "Please sign in." unless (signed_in? && current_user.admin == true)
     end
 
 end
