@@ -17,6 +17,14 @@
 @import "bootstrap";
 
 
+/* Colors*/
+
+$backgroundGray: #F2F3F7;
+$navbarGray: #B0B8BE;
+$white: #FFF;
+$black: #000;
+$linksBlue: #337AB7;
+
 
 html, body {
   margin: 0;
@@ -31,7 +39,7 @@ body {
   min-height: 100%;
   height: auto !important;
   position: relative;
-  background-color: #F2F3F7;
+  background-color: $backgroundGray;
   font-family: arial;
   font-size: 15px;
 }
@@ -39,42 +47,76 @@ body {
 
 /* Header */
 
-.header {
-/*  height: 3em; - если футер не поднимется */
-}
-
 .collapse {
   width: 1000px;
   margin: auto;
 }   
 
 
+/* Navigation */
+
+.navbar-nav {
+  width: 100%;
+}
+
+.navbar-default {
+  background-color: $navbarGray;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $white;
+}
+
+
 /* Content */
 
-
-
 .wrap {
-  background-color: #fff;
+  background-color: $white;
   padding: 20px 35px 20px 20px;
   max-width: 1000px;
   margin: auto;
   min-height: 800px;
 }
 
-
-
-
 .content {
   padding: 0 15px 0;
   min-width: 500px;
+  img {
+    max-width: 500px;
+  }
 }
 
-.content img {
-  max-width: 500px;
-}
+/* Sidebar */
 
+.header-popular {
+  margin-bottom: 30px;  
+}
 
 /* Public pages styles */
+
+.logo {
+  margin: auto;
+  width: 420px;
+  text-align: right;
+}
+
+.ruby-logo {
+  width: 49px;
+  height: 37px;
+  float: left;
+}
+
+.h1-main-page {
+  font-size: 38px;
+  margin: 0px;
+}
+
+.header-explanation {
+  width: 189px;
+  font-size: 12px;
+  color: #BBBBBB;
+  margin: auto auto 20px;
+}
 
 .art-prev {
   width: 100%;
@@ -82,21 +124,25 @@ body {
   outline: 0 none;
 }
 
-.header-art-prev {
-  line-height: 12px;
-  margin: 0 0 15px 0;
+.time-prev{
+  font-size: 12px;
+  color: #8A8D8E;
 }
 
-.header-art-prev a {
-  font-size: 18px;
-  color: red;
-  color: #337ab7;
+.header-art-prev {
+  line-height: 15px;
+  margin: 0 0 15px 0;
+  a {
+    font-size: 18px;
+    color: red;
+    color: $linksBlue;
+  }
 }
 
 .content-art-prev {
-  margin: -7px 0 0 0;
+  margin: -5px 0 0 0;
   font-size: 15px;
-  color: #000; 
+  color: $black; 
 }
 
 .art-title {
@@ -104,32 +150,18 @@ body {
   margin: 0 0 25px 0;
 }
 
-.art-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.pagination {
-  margin: 5px 0;
-}
-
-
-
 
 /* CMS pages styles */
 
 .art-title-signed, .art-id-signed, .art-btns-signed{
   margin-bottom: 5px;
   padding: 0 5px;
-
-}
-
-.art-id-signed {
-
 }
 
 .art-btns-signed{
   float: right;
+  margin-bottom: 5px;
+  padding: 0 5px;
 }
 
 .btn-warning, .btn-success, .btn-danger, .btn-info {
@@ -148,9 +180,13 @@ body {
   margin: 10px 0;
 }
 
+.art-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 .art-list-signed > .row {
   padding-bottom: 10px;
-
 }
 
 .h1-signed {
@@ -169,13 +205,9 @@ body {
   padding-bottom: 10px;
 }
 
-.usr-name-signed {
-}
-
-.usr-btns-signed {
-  margin-bottom: 5px;
-  padding: 0 5px;
-
+.user-role {
+  width: 300px;
+  margin: 10px 0;
 }
 
 .usr-number-signed {
@@ -199,75 +231,15 @@ body {
   }
 }
 
-.header-popular {
-  margin-bottom: 30px;  
-}
 
+/*  Login page */
 
-/* Footer */
-
-.panel-footer {
-  height: 70px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #B0B8BE;
-} 
-
-.copyrights {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 10px;
-}
-
-
-/* Will_paginate */
-
-.current {
-  display: inline-block;
-  font-size: 12px;
-  text-decoration: none;
-  color: #000000;
-}
-
-.gap{
-  display : none !important;
-}
-
-.pagination_links a{
-  display:none;
-}
-
-.next_page,.previous_page{
-  display:inline-block !important;
-  color: #3343A0;
-}
-
-.pagination_links{
-  text-align: center;
-}
-
-.previous_page.disabled, .next_page.disabled{
-  display: none !important;
-}
-
-.pagination_links a{
-  text-decoration: none;
-}
-
-.pagination_links a:hover{
-  text-decoration: underline;
-}
-
-.pagination_links span{
-  text-decoration: none;
-  display: inline-block;
-  color: #000000;
-}
-
-.pagination > li > a{
-
-  float: none;
+.login-form {
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #E5EDF4;
 }
 
 
@@ -279,18 +251,19 @@ body {
 
 .sidebar {
   padding: 10px 15px 20px;
-  color: #31708f;
-  background-color: #F2F3F7;
+  color: #31708F;
+  background-color: $backgroundGray;
 }
 
-.sidebar-content hr {
-  border-color: #CFCFCF;
-}
-
-.sidebar-content a {
-  color: #337ab7;
-  text-decoration: none;
-  font-size: 15px;
+.sidebar-content {
+  hr {
+    border-color: #CFCFCF;
+  }
+  a {
+    color: $linksBlue;
+    text-decoration: none;
+    font-size: 15px;
+  }
 }
 
 .art-edit-sidebar{
@@ -303,69 +276,71 @@ body {
 }
 
 
-/*  Login page */
+/* Will_paginate */
 
-.login-form {
-  width: 300px;
-  height: 200px;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #e5edf4;
-}
-
-.time-prev{
+.current {
+  display: inline-block;
   font-size: 12px;
-  color: #8a8d8e;
+  text-decoration: none;
+  color: $black;
+}
+
+.gap{
+  display : none !important;
+}
+
+.pagination a {
+  margin: 5px 0;
+}
+
+.pagination > li > a {
+  float: none;
+}
+
+.pagination_links a {
+  display:none;
+}
+
+.pagination_links {
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+  span {
+    text-decoration: none;
+    display: inline-block;
+    color: $black;
+  }
+}
+
+.next_page,.previous_page {
+  display:inline-block !important;
+  color: #3343A0;
+}
+
+.previous_page.disabled, .next_page.disabled {
+  display: none !important;
 }
 
 
-
-
-.header-explanation {
-  width: 189px;
-  font-size: 12px;
-  color: #bbbbbb;
-  margin: auto auto 20px;
-
-}
-
-
-.navbar-nav {
-  width: 100%;
-}
-
-.navbar-default {
-  background-color: #b0b8be;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #fff;
-}
-
-
-.h1-main-page {
-  font-size: 38px;
-  margin: 0px;
-}
-
-
+/* Footer */
 
 .footer {
   height: 100px;
 }
 
-.logo {
+.panel-footer {
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: $navbarGray;
+} 
+
+.copyrights {
+  max-width: 1000px;
   margin: auto;
-  width: 416px;
+  padding: 0 10px;
 }
 
-.ruby-logo {
-  width: 49px;
-  height: 37px;
-  float: left;
-}
 
-.user-role {
-  width: 300px;
-  margin: 10px 0;
-}
